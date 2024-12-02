@@ -1,0 +1,645 @@
+{
+	"info": {
+		"_postman_id": "b5f7ee3d-71a9-4833-86e6-c839147adbc7",
+		"name": "requetes-vet-clinic-api",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "39775799"
+	},
+	"item": [
+		{
+			"name": "cat",
+			"item": [
+				{
+					"name": "createCat",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"Nom\": \"Gribouille\",\n  \"Age\": 1,\n  \"Race\": \"Sauvage\",\n  \"Poids\": 2.5\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/cat/createCat",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"cat",
+								"createCat"
+							],
+							"query": [
+								{
+									"key": "Nom",
+									"value": "Simba",
+									"disabled": true
+								},
+								{
+									"key": "Age",
+									"value": "3",
+									"disabled": true
+								},
+								{
+									"key": "Race",
+									"value": "Maincoon",
+									"disabled": true
+								},
+								{
+									"key": "Poids",
+									"value": "4",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getCats",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/cat/getCats",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"cat",
+								"getCats"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getCat/{id}",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/cat/getCat/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"cat",
+								"getCat",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateCat/{id}",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"nom\": \"Gribouille\",\n    \"age\": 3,\n    \"race\": \"Sauvage\",\n    \"poids\": 3.5\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/cat/updateCat/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"cat",
+								"updateCat",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteCat/{id}",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/cat/deleteCat/3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"cat",
+								"deleteCat",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "{id}/history",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/cat/1/history",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"cat",
+								"1",
+								"history"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "visit",
+			"item": [
+				{
+					"name": "createVisit",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"cat_id\": 2,\n  \"date\": \"2023-06-25\",\n  \"motif\": \"1er vaccin\",\n  \"veterinaire\": \"Dr. DAMSO\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/visit/createVisit",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"visit",
+								"createVisit"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getVisits",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/visit/getVisits",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"visit",
+								"getVisits"
+							],
+							"query": [
+								{
+									"key": "Nom",
+									"value": "Simba",
+									"disabled": true
+								},
+								{
+									"key": "Age",
+									"value": "3",
+									"disabled": true
+								},
+								{
+									"key": "Race",
+									"value": "Maincoon",
+									"disabled": true
+								},
+								{
+									"key": "Poids",
+									"value": "4",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getVisit/{id}",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/visit/getVisit/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"visit",
+								"getVisit",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateVisit/{id}",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n        \"ID\": 3,\n        \"cat_id\": 2,\n        \"date\": \"2023-06-17\",\n        \"motif\": \"1er vaccin\",\n        \"veterinaire\": \"Dr. MARTIN\"\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/visit/updateVisit/3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"visit",
+								"updateVisit",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteVisit/{id}",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/visit/deleteVisit/3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"visit",
+								"deleteVisit",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAllVisitsByCat/{id}",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/visit/history/getAllVisitsByCat/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"visit",
+								"history",
+								"getAllVisitsByCat",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Filtre: withVeterinaire/{veterinaire}",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/visit/withDate/2024-12-25",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"visit",
+								"withDate",
+								"2024-12-25"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Filtre: withMotif/{motif}",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/visit/withMotif/vaccin",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"visit",
+								"withMotif",
+								"vaccin"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Filtre: withDate/{date}",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/visit/withVeterinaire/DROUET",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"visit",
+								"withVeterinaire",
+								"DROUET"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "treatment",
+			"item": [
+				{
+					"name": "createTreatment",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"visit_id\": 2,\n  \"medicament\": \"Antibiotique\",\n  \"dose\": \"25mg\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/treatment/createTreatment",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"treatment",
+								"createTreatment"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getTreatments",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/treatment/getTreatments",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"treatment",
+								"getTreatments"
+							],
+							"query": [
+								{
+									"key": "Nom",
+									"value": "Simba",
+									"disabled": true
+								},
+								{
+									"key": "Age",
+									"value": "3",
+									"disabled": true
+								},
+								{
+									"key": "Race",
+									"value": "Maincoon",
+									"disabled": true
+								},
+								{
+									"key": "Poids",
+									"value": "4",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getTreatment/{id}",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/treatment/getTreatment/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"treatment",
+								"getTreatment",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateTreatment/{id}",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"visit_id\": 2,\n  \"medicament\": \"Schampooing pour les poux et les puces\",\n  \"dose\": \"750mL\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/treatment/updateTreatment/3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"treatment",
+								"updateTreatment",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteTreatment/{id}",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/treatment/deleteTreatment/3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"treatment",
+								"deleteTreatment",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAllTreatmentsByVisit/{id}",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/treatment/history/getAllTreatmentsByVisit/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"treatment",
+								"history",
+								"getAllTreatmentsByVisit",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
